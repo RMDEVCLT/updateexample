@@ -15,4 +15,7 @@ Import-Module -Name PSWindowsUpdate
 Remove-WindowsUpdate -KBArticleID KB2267602
 https://petri.com/how-to-manage-windows-10-updates-via-powershell/
 
+Get-WindowsUpdate -Severity Important -Install -Verbose
+get-help Get-WindowsUpdate -examples
+get-help Get-WindowsUpdate -detailed
 

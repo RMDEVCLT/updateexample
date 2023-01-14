@@ -1,0 +1,18 @@
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+Get-WUInstall -AcceptAll -AutoReboot
+Get-WUInstall -AcceptAll -AutoReboot | Out-File C:\Windows\PSWindowsUpdate.log } -Confirm:$false -Verbose -SkipModuleTest –RunNow
+
+Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot
+Get-WindowsUpdate -KBArticleID "KB47857"," KB47859" -Install
+Install-WindowsUpdate -NotCategory "Drivers","FeaturePacks" -AcceptAll
+Install-WindowsUpdate -NotCategory "Drivers","FeaturePacks" -AcceptAll
+
+Install-Module -Name PSWindowsUpdate
+Import-Module -Name PSWindowsUpdate
+Remove-WindowsUpdate -KBArticleID KB2267602
+https://petri.com/how-to-manage-windows-10-updates-via-powershell/
+
+
